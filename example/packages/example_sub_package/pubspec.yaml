@@ -1,0 +1,16 @@
+name: example_sub_package
+description: An example sub-package to test assets in packages
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ">=2.17.0 <3.3.5"
+  flutter: "3.3.8"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/
