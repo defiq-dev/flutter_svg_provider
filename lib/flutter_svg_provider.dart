@@ -53,6 +53,11 @@ class Svg extends ImageProvider<SvgImageKey> {
   /// When returning null, use the default method.
   final SvgStringGetter? svgGetter;
 
+  /// Package where the asset file is.
+  /// If not specified only the path will be used.
+  /// If specified the path will be pre-pended with 'packages/$package/'
+  final String? package;
+
   /// Width and height can also be specified from [Image] constructor.
   /// Default size is 100x100 logical pixels.
   /// Different size can be specified in [Image] parameters
@@ -63,6 +68,7 @@ class Svg extends ImageProvider<SvgImageKey> {
     this.color,
     this.source = SvgSource.asset,
     this.svgGetter,
+        this.package,
   });
 
   @override
@@ -74,7 +80,7 @@ class Svg extends ImageProvider<SvgImageKey> {
 
     return SynchronousFuture<SvgImageKey>(
       SvgImageKey(
-        path: path,
+        path: package != null ? "packages/$package/$path" : path,
         scale: scale,
         color: color,
         source: source,
@@ -203,7 +209,7 @@ class SvgImageKey {
 
   @override
   int get hashCode =>
-      hashValues(path, pixelWidth, pixelHeight, scale, source, svgGetter);
+      Object.hash(path, pixelWidth, pixelHeight, scale, source, svgGetter);
 
   @override
   String toString() => '${objectRuntimeType(this, 'SvgImageKey')}'
