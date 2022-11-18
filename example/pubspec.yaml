@@ -21,6 +21,8 @@ publish_to: none
 dependencies:
   flutter_svg_provider:
     path: ../
+  example_sub_package:
+    path: packages/example_sub_package
   flutter:
     sdk: flutter
 
