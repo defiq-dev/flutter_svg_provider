@@ -15,3 +15,23 @@ Image(
   image: Svg('assets/my_icon.svg'),
 )
 ```
+
+Assets can also be in other packages:
+
+```dart
+Image(
+  width: 32,
+  height: 32,
+  image: Svg('assets/my_icon.svg', package: 'sub_package'),
+)
+```
+
+Assets can be loaded from the network:
+
+```dart
+Image(
+  width: 32,
+  height: 32,
+  image: Svg('https://example.com/asset.svg'),
+)
+```
