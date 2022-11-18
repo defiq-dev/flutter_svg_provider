@@ -37,11 +37,22 @@ class MyHomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Image(
-                width: 200,
-                height: 200,
-                image: Svg('assets/test.svg'),
-                color: Colors.red,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image(
+                    width: 150,
+                    height: 150,
+                    image: Svg('assets/test.svg'),
+                    color: Colors.red,
+                  ),
+                  SizedBox(width: 25),
+                  Image(
+                    width: 150,
+                    height: 150,
+                    image: Svg('assets/sun.svg', package: 'example_sub_package'),
+                  ),
+                ],
               ),
               SizedBox(height: 50),
               Image(
